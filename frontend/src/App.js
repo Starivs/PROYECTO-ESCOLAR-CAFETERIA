@@ -1,13 +1,21 @@
-// src/App.js
-import React from 'react';
-import './App.css';
-import Login from './Login';
+import React, { useState } from 'react';
+import Login from './login';
+import ProductGallery from './ProductGallery';
+
 function App() {
+  const [token, setToken] = useState(null);
+
   return (
     <div className="App">
-      <Login />
+      {!token ? (
+        <Login setToken={setToken} />
+      ) : (
+        <ProductGallery token={token} />
+      )}
     </div>
   );
 }
+
 export default App;
+
 
