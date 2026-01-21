@@ -20,6 +20,11 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('users.urls')),       # rutas de autenticación
-    path('api/', include('productos.urls')),   # rutas de productos
+    path('api/', include('users.urls')),
+]
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('api/', include('users.urls')),  # ya existente para autenticación
+    path('api/', include('productos.urls')), # nueva ruta para películas
 ]
